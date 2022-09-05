@@ -1,0 +1,21 @@
+<div *ngIf="form">
+    <form [formGroup]="form" id="contactMe">
+        <h2>Update Timezone for {{data2}}</h2>
+        <fieldset>
+            <input [attr.disabled]="true" value="{{data2}}" formControlName="name" type="text" tabindex="1" autocomplete="off">
+            <input [attr.disabled]="true" value="{{data1}}" formControlName="color" type="text" tabindex="2" autocomplete="off">
+            <select formControlName="timezone">
+                <option selected [attr.disabled]="true">Select Timezone</option>
+                <option  ngValue="{{t?.zoneName}}" *ngFor="let t of time_z"> {{t?.zoneName}}</option>
+            </select>
+            <button (click)="setCatUpdate()" [disabled]="!form.valid" name="submit" type="submit" id="contactSubmit">
+                Update
+            </button>
+        </fieldset>
+    </form>
+</div>
+
+
+<div *ngIf="!form">
+    <h2>Just a second, form is loading</h2>
+</div>

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto');
+button:disabled {
+    background-color: rgb(138, 138, 138) !important;
+    cursor: auto !important;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+#contactMe h2,
+h4 {
+    margin-bottom: 1em;
+}
+
+#contactMe input[type="text"] {
+    width: -webkit-fill-available;
+    border: 1px solid #ccc;
+    margin: 0 0 5px;
+    padding: 10px;
+}
+
+#contactMe textarea {
+    height: 100px;
+    max-width: 100%;
+    resize: none;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+#contactSubmit {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: #000;
+    color: #fff;
+    margin: 0 0 5px;
+    padding: 20px;
+    font-size: 15px;
+}
+
+#contactSubmit:hover {
+    background: #333;
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#contactMe input:focus,
+#contactMe textarea:focus {
+    outline: 0;
+    border: 1px solid #aaa;
+}
+
+::-webkit-input-placeholder {
+    color: #888;
+}
+
+:-moz-placeholder {
+    color: #888;
+}
+
+::-moz-placeholder {
+    color: #888;
+}
+
+:-ms-input-placeholder {
+    color: #888;
+}
+
+fieldset {
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-before: 0;
+    -webkit-padding-start: 0;
+    -webkit-padding-end: 0;
+    -webkit-padding-after: 0;
+}
+
+fieldset {
+    border: medium none !important;
+    margin: 0 0 10px;
+    min-width: 100%;
+    padding: 0;
+    width: 100%;
+}
+
+select {
+    width: -webkit-fill-available;
+    padding-bottom: 30px;
+    margin-bottom: 10px;
+}

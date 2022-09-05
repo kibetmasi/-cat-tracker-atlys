@@ -1,0 +1,39 @@
+<!-- header -->
+<app-header></app-header>
+
+<body class="color">
+    <div class="search" id="contactMe">
+        <input [(ngModel)]="search" type="text" placeholder="Search for your cat...">
+        <h6>Atlys Web engineer coding challenge</h6>
+    </div>
+    <mat-card *ngFor="let cat of (all_cats | search: search); let i = index">
+        <mat-card-title>{{cat?.name}}</mat-card-title>
+        <mat-card-subtitle>Color: {{cat?.color}} <span class="circle" [style.color]="cat?.color">●</span></mat-card-subtitle>
+        <mat-card-content>Current time: {{cat?.timezone}}</mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-button (click)="updateCatDetails(i, cat?.id)" color="primary">Update</button>
+            <button mat-button (click)="deleteCatDetails(cat?.id)" color="warn">Delete</button>
+        </mat-card-actions>
+    </mat-card>
+    <div>
+        <button mat-raised-button class="add" *ngIf="show_form === true" (click)="hideForm()">Hide Form</button>
+        <button mat-raised-button class="add" *ngIf="show_form === false" (click)="showForm()">Add Cat</button>
+    </div>
+    <!-- add new form -->
+    <div class="new" *ngIf="show_form === true">
+        <form [formGroup]="form" id="contactMe">
+            <h2>Add new Cat</h2>
+            <fieldset>
+                <input [placeholder]="nameHolder('name')" formControlName="name" type="text" tabindex="1">
+                <input matInput [placeholder]="colorHolder('color')" formControlName="color" type="text" tabindex="2">
+                <select formControlName="timezone">
+                    <option selected [attr.disabled]="true">Select Timezone</option>
+                    <option  ngValue="{{t?.zoneName}}" *ngFor="let t of time_z"> {{t?.zoneName}}</option>
+                </select>
+                <button mat-button (click)="addCat()" [disabled]="!form.valid" name="submit" type="submit" id="contactSubmit">
+                    Add
+                </button>
+            </fieldset>
+        </form>
+    </div>
+</body>
