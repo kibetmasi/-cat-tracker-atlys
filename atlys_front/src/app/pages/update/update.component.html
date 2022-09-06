@@ -8,14 +8,12 @@
                 <option selected [attr.disabled]="true">Select Timezone</option>
                 <option  ngValue="{{t?.zoneName}}" *ngFor="let t of time_z"> {{t?.zoneName}}</option>
             </select>
-            <button (click)="setCatUpdate()" [disabled]="!form.valid" name="submit" type="submit" id="contactSubmit">
+            <button (click)="setCatUpdate()" [disabled]="form.invalid" name="submit" type="submit" id="contactSubmit">
                 Update
             </button>
         </fieldset>
     </form>
 </div>
-
-
 <div *ngIf="!form">
-    <h2>Just a second, form is loading</h2>
+    <h2>Just a second, form is loading...</h2>
 </div>

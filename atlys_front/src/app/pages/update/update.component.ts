@@ -6,7 +6,6 @@ import { NotificationService } from 'src/app/error-handler/notification.service'
 import { CatService } from 'src/app/services/cat.service';
 import { TimezoneService } from 'src/app/services/timezone.service';
 import { environment } from 'src/environments/environment';
-import { HomepageComponent } from '../homepage/homepage.component';
 
 
 @Component({

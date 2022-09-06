@@ -2,7 +2,7 @@ import { Component, Injectable, OnInit } from '@angular/core';
 import { CatService } from 'src/app/services/cat.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NotificationService } from 'src/app/error-handler/notification.service';
-import {MatDialog } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { UpdateComponent } from '../update/update.component';
 import { TimezoneService } from 'src/app/services/timezone.service';
 
@@ -48,7 +48,7 @@ export class HomepageComponent implements OnInit {
     this.form = this.formBuilder.group({
       name: ['', [Validators.required]],
       color: ['', [Validators.required]],
-      timezone: ['', [Validators.required]]
+      timezone: ['', [Validators.required]],
     })
   }
 
